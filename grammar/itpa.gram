@@ -11,8 +11,49 @@ grammar itpa.bus.location;
 <eta> = estimate arrival time | e t a | arrival time;
 <station> = station | stop | stations | stops;
 <nearest> = nearest | closest;
+<route> = route | path;
+<garage> = P G one | gold | p g two | blue | p g three | panther | p g four | red | p g 5 | market station | p g six | tech station ;
+public <parkinggarage> = [ [parking] garage] <garage> [ [parking] garage]
 public <routebusstation> = [ [<routenm>] <bus> <station> [<platform>] [for <routenm>]| <platform> | [from <platform>] to <platform> ];
 public <buspattern> = [<routenm>] <bus> [<location>] [ from <platform> ] [to <platform>];
+public <busroute> = [<routenm>] [<bus>] <route> [ from <platform> ] [to <platform>];
+
+public <showparking> = ( tell me <parkinggarage> 
+| find <parkinggarage>
+| <parkinggarage>
+| go <parkinggarage>
+| how do i get to <parkinggarage>
+| location of the <parkinggarage>
+| 
+
+ );
+
+public <showbusroute> = ( <busroute>
+| bus route <routenm>
+| find out all the bus route passing through <platform>
+| find out <busroute>
+| give me the <busroute>
+| highlight the <busroute>
+| show <routenm>
+| show the <routenm>
+| show <routenm> on the map
+| show me the route for <routenm>
+| show me the route of <routenm> <bus>
+| show me the route of line <routenm>
+| show me which route pass by location <platform>
+| tell me the <routenm>
+| what bus route should i take to get from <platform> to <platform> 
+| what is the <busroute>
+| what routes are available at bus station <platform>
+| what routes go through  <platform>
+| what routes pass by <platform>
+| what is the route of line <route>
+| where is the <busroute>
+| where will <busroute> go
+| which bus route gets me to <platform>
+| which route will take me to <platform>
+| which way dose the <busroute> run
+);
 
 public <nearestbusstation> = (find me the <nearest> bus <station>
 | find out the <nearest> <station> from me

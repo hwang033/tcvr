@@ -24,7 +24,7 @@ public class SpeechRecognize {
     	// Set language model.
     	//configuration.setLanguageModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us.lm.dmp");
     	//configuration.setLanguageModelPath("file:c:/itpa.gram");
-    	configuration.setGrammarPath("file:c:/");
+    	configuration.setGrammarPath("file:c:/Springwp/tcvr/grammar");
         configuration.setUseGrammar(true);
         configuration.setGrammarName("itpa");
         recognizer = new LiveSpeechRecognizer(configuration);
