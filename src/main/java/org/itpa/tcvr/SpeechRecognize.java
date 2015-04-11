@@ -38,17 +38,26 @@ public class SpeechRecognize {
 		
 		recognizer.startRecognition(true);
     	System.out.println("start!");
-    	SpeechResult result = recognizer.getResult();
+    	SpeechResult result = null;
+    	
     	String speech_text = "";
-    	    
-	   	for (WordResult r : result.getWords()) {
-	   		//r.toString();
-	   		int comma_idx =  r.toString().indexOf(",");
-	   		if(comma_idx != -1){
-	   			speech_text += r.toString().substring(1, comma_idx);
-	   			speech_text += " ";
-	   		}
-	   	}
+    	while ((result = recognizer.getResult()) != null) {
+    		System.out.println(result.getHypothesis());
+//    		System.out.println(result.getLattice());
+//    		speech_text = "";
+//		   	for (WordResult r : result.getWords()) {
+//		   	
+//		   		System.out.println(r.toString());
+//		   		//r.toString();
+//		   		int comma_idx =  r.toString().indexOf(",");
+//		   		if(comma_idx != -1){
+//		   			speech_text += r.toString().substring(1, comma_idx);
+//		   			speech_text += " ";
+//		   		}
+//		   	}
+//		   	System.out.println(speech_text);
+		   	System.out.println("start!");
+    	}
     
     	// Pause recognition process. It can be resumed then with startRecognition(false).
     	recognizer.stopRecognition();
