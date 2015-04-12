@@ -13,7 +13,7 @@ grammar itpa.bus.location;
 <nearest> = nearest | closest;
 <route> = route | path;
 <garage> = p g one | gold | p g two | blue | p g three | panther | p g four | red | p g five | market station | p g six | tech station;
-<grage1> = garage | spot |garages | spots | parking garage| parking spots|  space | lot | garage | place ;
+<garage1> = garage | spot |garages | spots | parking garage| parking spots|  space | lot | garage | place ;
 
 
 public <parkinggarage> = [ [parking] garage] <garage> [ [parking] garage];
@@ -59,12 +59,12 @@ public <parkingoccupency> = (availability of <parkinggarage>
  
 public <recommendparking> = ( where [should | can | may] i park
 | [tell] [me] where to park
-| where is the parking <grage1> 
-| [show] [me] [the] [best] parking <grage1> 
+| where is the parking <garage1> 
+| [show] [me] [the] [best] parking <garage1> 
 | [show] [me] [the] [best] place to park
 | [show] [me] [the] [best] place for parking
-| (recommend | suggest | find) [me] [a] parking [<grage1> ]
-| parking [<grage1> ]
+| (recommend | suggest | find) [me] [a] parking [<garage1> ]
+| parking [<garage1> ]
 | parking recommendation
 );//call recomendparking
 
@@ -76,7 +76,7 @@ public <showparking> = ( tell me <parkinggarage>
 | how do i get to <parkinggarage>
 | location of the <parkinggarage>
 | <parkinggarage>
-| show me all the parking <grage1>
+| show me all the parking <garage1>
 | show me <parkinggarage>
 | show me the <parkinggarage>
 | where is <parkinggarage>
@@ -86,23 +86,23 @@ public <showparking> = ( tell me <parkinggarage>
 
 
 public <shownearestparking> = ( any parking garage near me
-| are there <grage1> around here
-| find out all near <grage1>
-| find out the <nearest> <grage1>
-| find out the near <grage1> having parking slot
-| find out the <nearest> <grage1>
-| is there a <grage1> around here
-| <nearest> <grage1>
-| <grage1> in my area
-| show me the <nearest> <grage1> i can park in
-| show me the <nearest> <grage1>
-| what is the <nearest> <grage1>
+| are there <garage1> around here
+| find out all near <garage1>
+| find out the <nearest> <garage1>
+| find out the near <garage1> having parking slot
+| find out the <nearest> <garage1>
+| is there a <garage1> around here
+| <nearest> <garage1>
+| <garage1> in my area
+| show me the <nearest> <garage1> i can park in
+| show me the <nearest> <garage1>
+| what is the <nearest> <garage1>
 | where can i find a parking garage
 | where can i park
-| where is the <nearest> <grage1>
+| where is the <nearest> <garage1>
 | which are the closest parking garages
-| which <nearest> <grage1> is near where i am
-| which <nearest> <grage1> is near here
+| which <nearest> <garage1> is near where i am
+| which <nearest> <garage1> is near here
 );//shownearestparking/{position}
 
  
