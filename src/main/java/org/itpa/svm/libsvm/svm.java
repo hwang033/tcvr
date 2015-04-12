@@ -1,8 +1,6 @@
 
+package org.itpa.svm.libsvm;
 
-
-
-package libsvm;
 import java.io.*;
 import java.util.*;
 
