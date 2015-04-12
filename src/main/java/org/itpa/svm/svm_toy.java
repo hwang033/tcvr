@@ -1,3 +1,5 @@
+package org.itpa.svm;
+
 import libsvm.*;
 import java.applet.*;
 import java.awt.*;

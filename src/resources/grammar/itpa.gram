@@ -1,0 +1,263 @@
+#JSGF V1.0;
+/**
+ * JSGF Grammar for itpa bus location example
+ */
+grammar itpa.bus.location;
+<routenm> = cats | g p e | golden panther express | panther express;
+<platform> = m m c | m m campus | main campus | engineer center | e c | biscayne bay campus | b b c | g c | graham center | p g five | p g five east | one o nine tower | lot five | lot three | biscayne boulevard;
+<bus> = bus | shuttle | buses | shuttles;
+<location> = location | position;
+<now> = now | currently;
+<eta> = estimate arrival time | e t a | arrival time;
+<station> = station | stop | stations | stops;
+<nearest> = nearest | closest;
+<route> = route | path;
+<garage> = p g one | gold | p g two | blue | p g three | panther | p g four | red | p g five | market station | p g six | tech station;
+<garage1> = garage | spot |garages | spots | parking garage| parking spots|  space | lot | garage | place ;
+
+
+public <parkinggarage> = [ [parking] garage] <garage> [ [parking] garage];
+public <routebusstation> = [ [<routenm>] <bus> <station> [<platform>] [for <routenm>] [from <platform>] [to <platform>] ];
+public <buspattern> = [<routenm>] <bus> [<location>] [ from <platform> ] [to <platform>];
+public <busroute> = [<routenm>] [<bus>] <route> [ from <platform> ] [to <platform>];
+
+public <parkingoccupencyinfo> = ( where is the least occupied garage
+| which garage has the most spots available
+| which garages are full
+| which is the least full parking garage at f i u
+| which parking garage has empty space
+| which parking garage is empty
+| which parking garages are empty
+| will i be able to find parking at f i u
+| show me the top three occupied garages
+| show me the parking garage with the least occupancy
+); // call parkinginfo
+
+
+public <parkingoccupency> = (availability of <parkinggarage>
+| available parking of <parkinggarage>
+| can i get parking at <parkinggarage>
+| can i park in <parkinggarage>
+| does <parkinggarage> have space left
+| find out the occupancy of <parkinggarage>
+| find out the rest slot of <parkinggarage>
+| how empty is <parkinggarage>
+| how full is <parkinggarage>
+| how many spots are available at <parkinggarage>
+| is <parkinggarage> full
+| is <parkinggarage> empty
+| is there any free space in <parkinggarage>
+| is there any position in <parkinggarage>
+| is there room to park in <parkinggarage>
+| is <parkinggarage> full
+| is <parkinggarage> available
+| parking occupancy for <parkinggarage>
+| parking space available for <parkinggarage>
+| show me the parking occupancy for <parkinggarage>
+| what is the parking occupancy for <parkinggarage>
+); //call parkingoccupency/{parkinggrage}
+ 
+public <recommendparking> = ( where [should | can | may] i park
+| [tell] [me] where to park
+| where is the parking <garage1> 
+| [show] [me] [the] [best] parking <garage1> 
+| [show] [me] [the] [best] place to park
+| [show] [me] [the] [best] place for parking
+| (recommend | suggest | find) [me] [a] parking [<garage1> ]
+| parking [<garage1> ]
+| parking recommendation
+);//call recomendparking
+
+
+public <showparking> = ( tell me <parkinggarage> 
+| find <parkinggarage>
+| <parkinggarage>
+| go <parkinggarage>
+| how do i get to <parkinggarage>
+| location of the <parkinggarage>
+| <parkinggarage>
+| show me all the parking <garage1>
+| show me <parkinggarage>
+| show me the <parkinggarage>
+| where is <parkinggarage>
+| where is the <parkinggarage>
+);//showparking/{garagenm}
+
+
+
+public <shownearestparking> = ( any parking garage near me
+| are there <garage1> around here
+| find out all near <garage1>
+| find out the <nearest> <garage1>
+| find out the near <garage1> having parking slot
+| find out the <nearest> <garage1>
+| is there a <garage1> around here
+| <nearest> <garage1>
+| <garage1> in my area
+| show me the <nearest> <garage1> i can park in
+| show me the <nearest> <garage1>
+| what is the <nearest> <garage1>
+| where can i find a parking garage
+| where can i park
+| where is the <nearest> <garage1>
+| which are the closest parking garages
+| which <nearest> <garage1> is near where i am
+| which <nearest> <garage1> is near here
+);//shownearestparking/{position}
+
+ 
+public <userposition> = ( where am i
+| show [me] where i am
+| show [me] my <location>
+| what is my [current] <location>
+| my <location>
+| show <location>
+| <location>
+);//showuserpositon/{position} 
+
+public <showbusroute> = ( <busroute>
+| bus route <routenm>
+| find out all the bus route passing through <platform>
+| find out <busroute>
+| give me the <busroute>
+| highlight the <busroute>
+| show <routenm>
+| show the <routenm>
+| show <routenm> on the map
+| show me the route for <routenm>
+| show me the route of <routenm> <bus>
+| show me the route of line <routenm>
+| show me which route pass by location <platform>
+| tell me the <routenm>
+| what bus route should i take to get from <platform> to <platform> 
+| what is the <busroute>
+| what routes are available at bus station <platform>
+| what routes go through  <platform>
+| what routes pass by <platform>
+| what is the route of line <route>
+| where is the <busroute>
+| where will <busroute> go
+| which bus route gets me to <platform>
+| which route will take me to <platform>
+| which way dose the <busroute> run
+);
+
+public <nearestbusstation> = (find me the <nearest> bus <station>
+| find [out] the <nearest> <station> from me
+| find the <nearest> bus station for <routenm> <bus>
+| how do i get to the <nearest> <routebusstation>
+| i want to go the nearest <routebusstation>
+| i want to go to <platform> where is the nearest <routebusstation>
+| i want to go to <platform> how do i get there
+| i want to know the position of <nearest> <routebusstation>
+| is there a <routebusstation> nearby
+| is there any <routebusstation> near me
+| <nearest> <routebusstation>
+| show me all the <routebusstation> that near my current position
+| show me <routebusstation> in the area
+| show me the closest <routebusstation>
+| show me the location of the <nearest> <routebusstation>
+| show me the <nearest> <routebusstation>
+| show the best <routebusstation>
+| take me to the <nearest> <routebusstation>
+| tell me the <nearest> <routebusstation>
+| tell me where the <nearest> <routebusstation> is
+| what is the <nearest> <routebusstation> to where i am now
+| what is the <nearest> <routebusstation>
+| what is the route to the <nearest> <routebusstation>
+| where do i find the <routenm> <bus> from here
+| where is the <nearest> <routebusstation>
+| where is the <nearest> <bus> <station> going to <platform>
+| where is the <nearest> <routebusstation> to me
+| where is the <nearest> <bus> <station> belongs to <routenm>
+| where is the <nearest> <bus> <station> for <routenm>
+| where is the <nearest> <routebusstation> from where i am
+| where the <nearest> <routebusstation> is located
+| which <bus> <station>  am i closest to
+);
+
+public <busstation> = (<routebusstation> 
+| bus <station> to <platform>
+| how do i get to the <routebusstation>
+| i want to know the  <routebusstation>
+| navigate to the <routebusstation>
+| show <routebusstation>
+| show me all the <station> for <routenm>
+| show me the <routebusstation>
+| show me the location of the <routebusstation> 
+| show me the way to the bus <routebusstation> 
+| tell me where the <routebusstation> is
+| what are all the bus <station> for [<routenm>] <bus> 
+| what is a good bus station to go from <platform> to <platform>
+| where is the <routebusstation> [located]
+| which bus <station> belongs to <routenm>
+| which bus <station> can take me to <platform>
+);
+
+
+public <buseta> = (<eta> for <buspattern>
+						| at what time will the <buspattern> arrive
+						| at what time will the <buspattern> be at <platform> stop
+						| can you show me <buspattern> <eta>
+						| <eta> for <buspattern>
+						| get me [a <buspattern>] to <platform>
+						| how long before the [next] <buspattern> arrive
+						| how long for the <buspattern>
+						| how long i have to wait for the <buspattern>
+						| how long is it for the arrival of <buspattern>
+						| how long it will take for <buspattern> to arrive 
+						| how long [till|until] the next <buspattern> comes
+						| how soon will the <buspattern> [arrive|come]
+						| show me the <eta> for <buspattern>
+						| show me the <eta> of the <buspattern>
+						| what is the <eta> of the <buspattern>
+						| what is the <eta> for the next bus of <routenm>
+						| what is the <eta> for <buspattern>
+						| when can i take the <buspattern>
+						| when does the <buspattern> arrive
+						| when does the next bus of <routenm> arrive
+						| when does the next <buspattern> arrive
+						| when does the next <routenm> arrive at <platform>
+						| when is the next arrival of <routenm> from <platform>
+						| when is the next bus of <routenm> coming
+						| when is the next <routenm> [arriving]
+						| when is the next <routenm> [<bus>] for <platform> due
+						| when the <buspattern> arrive
+						| when will <buspattern> arrive
+						| when will <routenm> [<bus>] reach bus stop <platform>
+						| when will the <buspattern> [arrive | get] here 
+						| when will the next <buspattern> arrive
+						| when will the next <buspattern> be here
+						| when will the next <routenm> [<bus>] leave from <platform>
+						| will the <buspattern> late
+						);
+
+public <buslocation> = ( <buspattern> now
+						| can you show me the <buspattern> now
+						| can you show me where the <buspattern> is
+						| how far is the <buspattern> away from my <location>
+						| i am waiting for <buspattern>
+						| is there a <bus> of <routenm> [ from <platform> ] [to <platform>] nearby
+						| show <buspattern>
+						| show me the <buspattern>
+						| show me the <buspattern> <location>
+						| show me where the <buspattern> is
+						| tell me the <buspattern> position
+						| tell me the <buspattern> current location
+						| tell me where the <buspattern> is
+						| what is the <buspattern> location
+						| what is the current location of the <buspattern>
+						| what is the dynamic <buspattern> [location| position]
+                        | where can i find the <buspattern>
+                        | where do i catch <buspattern>
+                        | where is <buspattern>
+                        | where is the <buspattern> [ <now> ]
+                        | where is the  <buspattern> going
+                        | where the  <buspattern> currently is
+                        | where is the <bus> of <routenm>
+);
+				
+	
+				
+				
+				

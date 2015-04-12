@@ -1,0 +1,12 @@
+
+public <userposition> = (
+where am I
+| show [me] where I am
+| show [me] my <location>
+| what is my [current] <location>
+| what's my [current] <location>
+| my <location>
+| show <location>
+| <location>
+);
+
