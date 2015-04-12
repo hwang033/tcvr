@@ -47,19 +47,7 @@ public class SpeechRecognize {
     		System.out.println(speech_text);
     		System.out.println(cmd_classifier.PredictRawString(speech_text));
     		System.out.println(dep_parser.getPaser(speech_text));
-//    		System.out.println(result.getLattice());
-//    		speech_text = "";
-//		   	for (WordResult r : result.getWords()) {
-//		   	
-//		   		System.out.println(r.toString());
-//		   		//r.toString();
-//		   		int comma_idx =  r.toString().indexOf(",");
-//		   		if(comma_idx != -1){
-//		   			speech_text += r.toString().substring(1, comma_idx);
-//		   			speech_text += " ";
-//		   		}
-//		   	}
-//		   	System.out.println(speech_text);
+
 		   	System.out.println("start!");
     	}
     
