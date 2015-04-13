@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-import libsvm.svm;
-import libsvm.svm_model;
-import libsvm.svm_node;
+import libsvm.*;
 
 public class SVMPredictCmd {
 
