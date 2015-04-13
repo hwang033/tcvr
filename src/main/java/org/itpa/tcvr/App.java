@@ -39,20 +39,20 @@ public class App
 		EntityFilter efilter = new EntityFilter();
 		UrlGenerator ug = new UrlGenerator();
 		
-		String teststr = "i want to know the position of closest shuttle stop to MMC";
-		//String[] res = ug.ExtractRoutePlatformInfo(teststr, dp.getSemanticGraph(teststr));
-		System.out.println(ug.GetUrl(COMMAND_TYPES.NEARESTBUSSTATION, teststr, dp.getSemanticGraph(teststr)));
-		
-		System.out.println("done");
+//		String teststr = "i want to know the position of closest shuttle stop to MMC";
+//		//String[] res = ug.ExtractRoutePlatformInfo(teststr, dp.getSemanticGraph(teststr));
+//		System.out.println(ug.GetUrl(COMMAND_TYPES.NEARESTBUSSTATION, teststr, dp.getSemanticGraph(teststr)));
 //		
-//		SpeechRecognize sr = new SpeechRecognize(classifier, dp, efilter, ug);
-//    	
-//    	while(true){
-//	    	String speech_text = sr.getSpeechResult();
-//	       	System.out.println(speech_text);
-//	       	//System.out.println(dsb.PredictRawString(speech_text));
-//	      	System.out.println(dp.getPaser(speech_text));
-//    	}
+//		System.out.println("done");
+//		
+		SpeechRecognize sr = new SpeechRecognize(classifier, dp, efilter, ug);
+    	
+    	while(true){
+	    	String speech_text = sr.getSpeechResult();
+	       	System.out.println(speech_text);
+	       	//System.out.println(dsb.PredictRawString(speech_text));
+	      	System.out.println(dp.getPaser(speech_text));
+    	}
 
 
     }
