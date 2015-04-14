@@ -22,7 +22,7 @@ public class UrlGenerator {
 	
 	private String[] reg_to_platform_pattern = {
 			"aux\\((.+?)-\\d+, to-\\d+\\)", "prep_to\\(.*?, (.+?)-\\d+\\)",
-			""};
+			};
 	
 	private String[] reg_at_platform_pattern = {
 			"prep_at\\(.+?, (.*?)-\\d+\\)",
@@ -76,7 +76,7 @@ public class UrlGenerator {
 		 * 2. lot name
 		 * */
 		
-		String[] res = new String[]{null, null};
+		String[] res = new String[]{"null", "null"};
 		String dep = sg.toList();
 		
 		Matcher m;
@@ -163,10 +163,11 @@ public class UrlGenerator {
 		case SHOWPARKING:
 			String[] garages2 = ExtractGarageInfo(text, sgraph);
 			url.append("/show_parking/");
+		
 			if (!garages2[0].equals("null")) {
-				url.append(garages2[0]);
+					url.append(garages2[0]);
 			} else if (!garages2[1].equals("null")) {
-				url.append(garages2[1]);
+					url.append(garages2[1]);
 			}
 			break;
 		case SHOWNEARESTPARKING:

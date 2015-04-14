@@ -34,7 +34,7 @@ public class App
 				"leave", "late", "far", "away", "waiting", "dynamic", "catch",
 				"currently" };
 		
-		SVMPredictCmd classifier = new SVMPredictCmd("C:\\workspace\\svm_train2.model", volcabulary);
+		SVMPredictCmd classifier = new SVMPredictCmd("c:\\svm_train2.model", volcabulary);
 		DependenciesPaser dp = new DependenciesPaser();
 		EntityFilter efilter = new EntityFilter();
 		UrlGenerator ug = new UrlGenerator();

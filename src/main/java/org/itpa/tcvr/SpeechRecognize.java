@@ -52,13 +52,14 @@ public class SpeechRecognize {
 
 		while ((result = recognizer.getResult()) != null) {
 			speech_text = result.getHypothesis();
+			String org_text = speech_text;
 			speech_text = efilter.Filter(speech_text);
 			System.out.println(speech_text);
 			// System.out.println(cmd_classifier.PredictRawString(speech_text));
 			
 			System.out.println(dep_parser.getPaser(speech_text));
 			System.out.println(urlgen.GetUrl(
-					cmd_classifier.PredictRawString(speech_text),
+					cmd_classifier.PredictRawString(org_text),
 					speech_text,
 					dep_parser.getSemanticGraph(speech_text)));
 
