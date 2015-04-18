@@ -48,7 +48,7 @@ public class SpeechRecognize {
 		String speech_text = "";
 		SpeechResult result = null;
 
-		System.out.println("start!");
+		System.out.println("Listening...");
 
 		while ((result = recognizer.getResult()) != null) {
 			speech_text = result.getHypothesis();
@@ -63,7 +63,7 @@ public class SpeechRecognize {
 					speech_text,
 					dep_parser.getSemanticGraph(speech_text)));
 
-			System.out.println("start!");
+			System.out.println("Listening...");
 		}
 
 		// Pause recognition process. It can be resumed then with

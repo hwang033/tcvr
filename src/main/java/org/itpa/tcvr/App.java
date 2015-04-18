@@ -12,7 +12,7 @@ public class App
 {
     public static void main( String[] args ) throws IOException
     {
-    	String[] volcabulary = { "where", "is", "the", "least",
+    	String[] vocabulary = { "where", "is", "the", "least",
 				"occupied", "garage", "which", "has", "most", "spots", "available",
 				"garages", "are", "full", "parking", "at", "f", "i", "u", "empty",
 				"space", "will", "be", "able", "to", "find", "show", "me", "top",
@@ -33,24 +33,16 @@ public class App
 				"soon", "come", "when", "coming", "arriving", "due", "reach",
 				"leave", "late", "far", "away", "waiting", "dynamic", "catch",
 				"currently" };
-		
-		SVMPredictCmd classifier = new SVMPredictCmd("c:\\svm_train2.model", volcabulary);
+    	
 		DependenciesPaser dp = new DependenciesPaser();
 		EntityFilter efilter = new EntityFilter();
 		UrlGenerator ug = new UrlGenerator();
 		
-//		String teststr = "i want to know the position of closest shuttle stop to MMC";
-//		//String[] res = ug.ExtractRoutePlatformInfo(teststr, dp.getSemanticGraph(teststr));
-//		System.out.println(ug.GetUrl(COMMAND_TYPES.NEARESTBUSSTATION, teststr, dp.getSemanticGraph(teststr)));
-//		
-//		System.out.println("done");
-//		
 		SpeechRecognize sr = new SpeechRecognize(classifier, dp, efilter, ug);
     	
     	while(true){
 	    	String speech_text = sr.getSpeechResult();
 	       	System.out.println(speech_text);
-	       	//System.out.println(dsb.PredictRawString(speech_text));
 	      	System.out.println(dp.getPaser(speech_text));
     	}
 

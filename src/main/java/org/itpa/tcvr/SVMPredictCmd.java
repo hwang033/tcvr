@@ -74,15 +74,15 @@ public class SVMPredictCmd {
 
 	public SVMPredictCmd(String model_path, String[] volc) throws IOException {
 		// load model in constructor
-		volcabulary = volc;
+		vocabulary = volc;
 		smodel = svm.svm_load_model(model_path);
 		dicmap = new HashMap<String, Integer>();
-		for (int i = 0; i < volcabulary.length; ++i) {
-			dicmap.put(volcabulary[i], i+1);
+		for (int i = 0; i < vocabulary.length; ++i) {
+			dicmap.put(vocabulary[i], i+1);
 		}
 	}
 
 	private svm_model smodel;
 	private static HashMap<String, Integer> dicmap;
-	private String[] volcabulary;
+	private String[] vocabulary;
 }
