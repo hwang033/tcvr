@@ -34,6 +34,8 @@ public class App
 				"leave", "late", "far", "away", "waiting", "dynamic", "catch",
 				"currently" };
     	
+		SVMPredictCmd classifier = new SVMPredictCmd("C:\\workspace\\GitHub\\tcvr\\src\\resources\\model\\svm_train2.model", vocabulary);
+    	//SVMPredictCmd classifier = new SVMPredictCmd(Thread.currentThread().getContextClassLoader().getResource("model/svm_train2.model").getFile(), vocabulary);
 		DependenciesPaser dp = new DependenciesPaser();
 		EntityFilter efilter = new EntityFilter();
 		UrlGenerator ug = new UrlGenerator();
