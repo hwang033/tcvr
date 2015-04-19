@@ -2,7 +2,7 @@
 Traffic Command Voice Recognition
 
 # Architecture
-![Alt text](https://github.com/yguan004/tcvr/blob/master/doc/ml_architecture.png "Architecture")
+![Alt text](https://raw.githubusercontent.com/hwang033/tcvr/master/doc/ml_architecture.png "Architecture")
 
 # Folder structure
 `src` - source code in java
