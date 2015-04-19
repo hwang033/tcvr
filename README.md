@@ -8,3 +8,7 @@ Traffic Command Voice Recognition
 `src` - source code in java
 
 `data` - training data for classifier
+
+`doc` - documentation
+
+`scripts` - training data generation scripts
