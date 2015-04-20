@@ -25,7 +25,7 @@ user can not use their hands to operate the software. The main
 goal of implementing voice command control is to get efficient
 way for humans to communicate with computers.
 
-[ITPA] (Informed Traveler Program and Applications),
+[ITPA]\(Informed Traveler Program and Applications),
 which we are currently working on, is a project that would
 provide personalized, timely information and advice regarding
 the most efficient and cost effective travel paths for consumers,
