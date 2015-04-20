@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>TCVR project report-CAP5610</title>
+<style>
+#header{
+text-align: center;
+}
+#main{
+margin: 0 100px;
+}
+#refs{
+font-size: small;
+}
+</style>
+</head>
+<body>
+<div id="header">
+<h1 id="course-project-for-cap5610-machine-learning">Course project for CAP5610 Machine Learning</h1>
+<h1 id="traffic-information-voice-command-recognizer">Traffic Information Voice Command Recognizer</h1>
+<h3 id="team-member-yudong-guang-huibo-wang">Team member: Yudong Guang, Huibo Wang</h3>
+<h3 id="pub-date">April 2015</h3>
+</div>
+<hr>
+<div id="main">
+<h4 id="1-abstract">1. Abstract</h4>
+<p>The system in the project is designed to work as
+a module that the outer system can use to transform user’s voice
+to a URL that it can use to retrieve the corresponding information
+that the user is interested in. In this webpage, we introduced our
+motivation of doing this project and our design of the system. 
+We have implemented the modules
+in the design and have a runnable version. We did an evaluation
+on the accuracy of the system and also listed the possible future
+work. For the details of implementation, evaluation and future work,
+please see our full <a href="https://github.com/hwang033/tcvr/blob/master/doc/project_report.pdf">project report</a>.</p>
+<h4 id="2-introduction-motivation">2. Introduction &amp; Motivation</h4>
+<p>With the exponentially growth of the natural language
+processing technology, more and more softwares provide voice
+command recognizer as an import interacted method with the
+user. Besides by touching and pressing keyboard, user can
+interact with the software by simply telling the software what
+they want to do. The main advantage is that it facilitates the
+communication between human and software, especially when
+user can not use their hands to operate the software. The main
+goal of implementing voice command control is to get efficient
+way for humans to communicate with computers.</p>
+<p><a href="http://government.fiu.edu/_assets/docs/UniversityCityProjectOverview.pdf">ITPA</a> (Informed Traveler Program and Applications),
+which we are currently working on, is a project that would
+provide personalized, timely information and advice regarding
+the most efficient and cost effective travel paths for consumers,
+specifically for the university area around FIU.</p>
+<p>The ITPA will provide a smartphone-based interface for
+users to acquire, request and manipulate the information
+needed. Apart from the common interactions between the user
+and APP via physically touching the screen, it is very helpful
+to allow users to interact with the APP by voice.</p>
+<p>The project implemented the traffic information voice command
+recognizer (will be referred to as TCVR in the following
+context) for the ITPA APP. Briefly, TCVR takes the users voice
+as input, recognize the words in the sentence, and extract
+the semantic meaning of the command, which will allow
+the APP to send the corresponding request to the backend.
+TCVR should be able to recognize the common requests of
+users, including but not limited to getting parking information,
+getting direction to certain location and sending public transit
+request.</p>
+<p>In some scenarios, commanding by voice is the most
+‘natural’ and intuitive way, which can let users interact with
+computer with the minimum or even without learning. For
+example, using voice-controlled personal computers for dictation
+is an important application for physically disabled or
+layers; another application is environmental control, such as
+turning on the light, controlling the TV etc. In some other
+cases, freeing hands from devices can let people concentrate
+more on the task instead of controlling. For example, when
+people are driving and using cellphone to search for point of
+interest, it is safer and easier to let user speak instead of typing.
+Hence, apart from the common interactions between the user
+and APP via physically touching the screen, it is very helpful
+to allow users to interact with the APP by voice. For example,
+the user can speak to the APP to get the parking information
+of the nearest parking garage in campus, or the user can speak
+to the APP to send a transit request. Allowing interacting with
+the APP by voice can prevent the users from typing on the
+phone while driving and thus improve the overall safety of
+traffic on campus, especially FIU is one of the most populated
+university in America.</p>
+<h4 id="3-architecture">3. Architecture</h4>
+<p style="text-align:center;">
+  <img src="https://raw.githubusercontent.com/hwang033/tcvr/master/doc/ml_architecture.png" alt="TCVR Architecture" title="TCVR Architecture" width="600px">
+</p>
+<p>The above figure shows the architecture of ITPA traffic command
+voice recognizer. There are 5 modules in the system:</p>
+<ul>
+<li>voice recognizing tool</li>
+<li>refining filter</li>
+<li>command type classifier</li>
+<li>dependency parser</li>
+<li>URL generator.</li>
+</ul>
+<p>The input of this system is voice, and output is the corresponding
+URL. ITPA can call the URL to retrieve and display
+the requested transit information.</p>
+<p>Voice recognizing tool transform the input voice to text
+format. In this module a grammar file is needed to define
+the questions’ type. This grammar file is generated from a
+survey. Different person may have different way to express
+the same meaning. So we used a survey to collect how people
+asked questions. This module is based on CMU Sphinx speech
+recognition package.</p>
+<p>Refining filter module is used to refine the text generated
+from voice recognizing tool. Bus route, bus stops, garage name
+and abbreviation will be replaced by a unified format. The
+refined text file will improve the accuracy of classifier.</p>
+<p>Command type classifier leverages support vector machine
+(SVM). There are 12 types of questions, such as parking
+occupancy information, user position and bus location. The
+classifier will predict the question type for each refined text
+based on the trained SVM model. The model is trained using
+the questions from the Grammar file.</p>
+<p>Dependency parser provides the grammatical structure of
+sentences, for instance, which words are subject or object of
+a verb. After the question type is determined, the next step
+is extracting the parameters. For example, user may request
+the bus location from FIU main campus to engineer center.Dependency parser will extract the engineer center and FIU
+main campus and the ”from-to” relationship between them.</p>
+<p>The last module is called URL generator. Each question type
+has a corresponding URL, and each URL may have some parameters.
+The question type is calculated from command type
+classifier and the parameters is extracted from the dependency
+parser. In this module is trying to map the question type to a
+URL and give the parameters.</p>
+<h4 id="4-implementation-evaluation-and-future-work">4. Implementation, Evaluation and Future work</h4>
+<p>For the details of implementation, evaluation and future work, please see our full <a href="https://github.com/hwang033/tcvr/blob/master/doc/project_report.pdf">project report</a>, in which we introduced our design and implementation details for each module.</p>
+<p>Also, please don&#39;t hesitate to checkout our GitHub <a href="https://github.com/hwang033/tcvr">repository</a> where we have published all our code and documentation.</p>
+<h4 id="5-conclusion">5. Conclusion</h4>
+<ul>
+<li>Voice command control can facilitate the communication between human and machine</li>
+<li>We have found a way to implement a voice command recognizer for specific domain</li>
+<li>We made our semantic extraction easier by introducing SVM classifier</li>
+</ul>
+</div>
+<hr>
+<h4 id="references">References</h4>
+<div id="refs">
+<p>[1] “Partnering for 21st century prosperity,”
+<a href="http://government.fiu.edu/">http://government.fiu.edu/</a> assets/docs/UniversityCityProjectOverview.pdf,
+accessed: 2015-04-18.</p>
+<p>[2] X. Huang, F. Alleva, H.-W. Hon, M.-Y. Hwang, K.-F. Lee, and R. Rosenfeld,
+“The sphinx-ii speech recognition system: an overview,” Computer
+Speech &amp; Language, vol. 7, no. 2, pp. 137–148, 1993.</p>
+<p>[3] L. Rabiner, “A tutorial on hidden markov models and selected applications
+in speech recognition,” Proceedings of the IEEE, vol. 77, no. 2,
+pp. 257–286, 1989.</p>
+<p>[4] R. P. Lippmann, “Review of neural networks for speech recognition,”
+Neural computation, vol. 1, no. 1, pp. 1–38, 1989.</p>
+<p>[5] “Jspeech grammar format,” <a href="http://www.w3.org/TR/jsgf/">http://www.w3.org/TR/jsgf/</a>, accessed: 2015-
+04-18.</p>
+<p>[6] J. R. Quinlan, “Induction of decision trees,” Machine learning, vol. 1,
+no. 1, pp. 81–106, 1986.</p>
+<p>[7] A. Liaw and M.Wiener, “Classification and regression by randomforest,”
+R news, vol. 2, no. 3, pp. 18–22, 2002.</p>
+<p>[8] C. J. Burges, “A tutorial on support vector machines for pattern recognition,”
+Data mining and knowledge discovery, vol. 2, no. 2, pp. 121–167,
+1998.</p>
+<p>[9] A. OpenNLP, “Welcome to apache opennlp.”</p>
+<p>[10] C. D. Manning, M. Surdeanu, J. Bauer, J. Finkel, S. J. Bethard,
+and D. McClosky, “The stanford corenlp natural language processing
+toolkit,” in Proceedings of 52nd Annual Meeting of the Association for
+Computational Linguistics: System Demonstrations, 2014, pp. 55–60.</p>
+</div>
+</body></html>
