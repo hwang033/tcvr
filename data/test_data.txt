@@ -1,0 +1,51 @@
+buseta arrival time for cats buses 
+buseta how soon will the gpe bus come
+buseta how long i have to wait for the cats shuttle 
+buseta estimate arrival time for buses position from mmc
+nearestbusstation how do i get to the nearest bus stops for cats
+nearestbusstation i want to know the position of closest buses stations to ec
+nearestbusstation what is the closest shuttle station to EC
+nearestbusstation what is the closest shuttle station from EC
+nearestbusstation what is the closest cats bus station
+recommendparking the best parking garage
+recommendparking where can i park
+recommendparking where should i park
+recommendparking suggest me a parking spot
+recommendparking where is the parking garage
+busstation gpe bus station 
+busstation cats bus station
+busstation bus <station> to <platform>
+busstation show me the location of the gpe shuttles stops
+busstation where is the buses stops for cats located
+shownearestparking what is the nearest garage
+shownearestparking is there parking garage around here
+shownearestparking find out the nearest parking spots
+shownearestparking nearest parking spots
+shownearestparking garages in my area
+buslocation where is the cats bus
+buslocation where is the cats bus
+buslocation show me the cats bus to ec
+buslocation where do i catch <routenm> bus position
+parkingoccupency find out the occupancy of parking garage <garage>
+parkingoccupency find out the occupancy of garage <garage>
+parkingoccupency how many spots are available at parking garage <garage>
+parkingoccupency show me the parking occupancy for garage <garage>
+parkingoccupency find out the rest slot of garage <garage>
+userposition my location
+userposition show position
+userposition what is my current location
+userposition where am i
+userposition my position
+showparking garage <garage>  not right
+showparking show me all the parking garage
+showparking how do i get to garage <garage>
+showparking go parking garage <garage>
+showparking show me all the parking spots
+showbusroute what is the route to <platform>
+showbusroute bus route <routenm>
+showbusroute highlight the route to <platform>
+showbusroute show <routenm>
+parkingoccupencyinfo which parking garages are empty
+parkingoccupencyinfo will i be able to find parking at f i u
+parkingoccupencyinfo which parking garage has empty space
+parkingoccupencyinfo show me the top three occupied garages

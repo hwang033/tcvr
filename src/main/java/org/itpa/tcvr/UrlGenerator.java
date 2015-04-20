@@ -21,7 +21,9 @@ public class UrlGenerator {
 	private String[] reg_from_platform_pattern = {"prep_from\\(.*?, (.+?)-\\d+\\)"};
 	
 	private String[] reg_to_platform_pattern = {
-			"aux\\((.+?)-\\d+, to-\\d+\\)", "prep_to\\(.*?, (.+?)-\\d+\\)",
+			"aux\\((.+?)-\\d+, to-\\d+\\)", 
+			"prep_to\\(.*?, (.+?)-\\d+\\)",
+			"pobj\\(.*?, (.+?)-\\d+\\)"
 			};
 	
 	private String[] reg_at_platform_pattern = {

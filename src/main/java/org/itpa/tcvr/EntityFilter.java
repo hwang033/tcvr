@@ -17,6 +17,8 @@ public class EntityFilter {
 		entity_mapping.put("main campus", "MMC");
 		entity_mapping.put("engineer center", "EC");
 		entity_mapping.put(" e c ", " EC ");
+		entity_mapping.put(" e c", " EC");
+		entity_mapping.put("e c ", "EC ");
 		entity_mapping.put("biscayne bay campus", "BBC");
 		entity_mapping.put("b b c", "BBC");
 		entity_mapping.put(" g c ", " GC ");
