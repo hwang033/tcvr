@@ -1,5 +1,4 @@
-# Course project for CAP5610 Machine Learning
-# Traffic Information Voice Command Recognizer
+# Course project for CAP5610 Machine Learning<br/>Traffic Information Voice Command Recognizer
 
 ###Team member: Yudong Guang, Huibo Wang
 ---
