@@ -35,6 +35,7 @@ class Training:
         self.words = {} 
         self.cluster = {}
         self.idx = 1
+        self.sentence = {}
 
     def open_pattern(self):
         #self.generate_word()
@@ -309,7 +310,13 @@ class Training:
 
                 for idx, srst in enumerate(rst):
                     #print "%d %s" %(cid, ' '.join(srst))
-                    print "%s %s" %(lable, ' '.join(rst_words[idx]))
+                    #print "%s %s" %(lable, ' '.join(rst_words[idx]))
+                    self.sentence.setdefault(lable, [])
+                    self.sentence[lable].append(' '.join(rst_words[idx]))
+        import random
+        for key, value in self.sentence.items():
+            for i in range(5):
+               print "%s %s" %(key, random.choice(value))
 
     def train_word_data_dt_rf(self):
 
@@ -409,7 +416,7 @@ if __name__ == "__main__":
     #tr.test_data_f()
     tr = Training("data/traindata3.txtopen_pattern")
     #tr.open_pattern()
-    #tr.train_word_data_svm()
-    tr.train_word_data_dt_rf()
+    tr.train_word_data_svm()
+    #tr.train_word_data_dt_rf()
     #tr.test_data_svm("data/test1.txt")
     #tr.test_word_data_svm(self, testnm):
