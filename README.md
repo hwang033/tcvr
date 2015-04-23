@@ -8,6 +8,14 @@ The webpage is in `doc/ML_project_webpage.html`
 
 The report is in `doc/project_report.pdf`
 
+The Java code is in `src`
+
+The language model and SVM model are in `src/resources`
+
+The training data and test data are in `data`
+
+The scripts to generate training data and test data are in `scripts`
+
 ---
 ####1. Abstract
 The system in the project is designed to work as
