@@ -2,6 +2,13 @@
 
 ###Team member: Yudong Guang, Huibo Wang
 ---
+###Folder structure
+
+The webpage is in `doc/ML_project_webpage.html`
+
+The report is in `doc/project_report.pdf`
+
+---
 ####1. Abstract
 The system in the project is designed to work as
 a module that the outer system can use to transform user’s voice
